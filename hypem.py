@@ -26,6 +26,7 @@ from time import time
 from bs4 import BeautifulSoup
 import json
 import string
+import os
 
 ##############AREA_TO_SCRAPE################
 # This is the general area that you'd
@@ -140,9 +141,13 @@ class HypeScraper:
         download_response = urllib2.urlopen(url)
         filename = "{} - {}.mp3".format(artist, title)
 
-        mp3_song_file = open(filename, "wb")
-        mp3_song_file.write(download_response.read() )
-        mp3_song_file.close()
+        if not os.path.isfile(filename):
+            mp3_song_file = open(filename, "wb")
+            mp3_song_file.write(download_response.read() )
+            mp3_song_file.close()
+        else:
+            print "Music in sync with hypem"
+            sys.exit()
       except urllib2.HTTPError, e:
             print 'HTTPError = ' + str(e.code) + " trying hypem download url."
       except urllib2.URLError, e:
