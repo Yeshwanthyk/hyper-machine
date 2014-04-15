@@ -7,4 +7,3 @@ is a script to download the songs.
 Most of the hardwork had already been done by [Farid Zakaria](https://github.com/fzakaria), I am just building a little convinience on top of his script.
 
 #### P.S. Help support musicians and music. If you really do like someone's music, support them by buying it.
-it
